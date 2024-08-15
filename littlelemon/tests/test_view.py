@@ -4,14 +4,10 @@ from rest_framework import status
 from rest_framework.test import APIClient
 from models import Menu
 from serializers import MenuSerializer
-
-class MenuTest(TestCase):
-  def test_get_item(self):
-    item = Menu.objects.create(Title="IceCream", Price=80, Inventory=100)
-    self.assertEqual(str(item), "IceCream : 80")
   
+class MenuViewTest(TestCase):
   def setUp(self):
-    # Set up test data for Menu model
+  # Set up test data for Menu model
     self.client = APIClient()
     self.item1 = Menu.objects.create(Title="IceCream", Price=80, Inventory=100)
     self.item2 = Menu.objects.create(Title="Burger", Price=150, Inventory=50)

@@ -5,6 +5,9 @@ from django.contrib.auth.models import User
 from .models import Menu, Booking
 from .serializers import MenuSerializer, BookingSerializer, UserSerializer
 
+def index(request):
+    return render(request, 'index.html', {})
+
 # Create your views here.
 class MenuView(generics.ListCreateAPIView):
     queryset = Menu.objects.all()
